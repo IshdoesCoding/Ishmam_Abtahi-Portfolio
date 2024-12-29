@@ -1,0 +1,17 @@
+.contact{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+    gap: 20px;
+
+    h2{
+        text-decoration: underline;
+    }
+
+    p{
+        color: #fff;
+    }
+
+}

@@ -1,0 +1,163 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    display: center;
+    gap: 10px;
+    text-align: center;
+    height: 100dvh;
+    min-height: 500px;
+
+    .hero{
+        max-width: 200px;
+    }
+
+    span {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+
+        a {
+            margin: 0;
+
+            img {
+                width: 30px;
+            }
+        }
+
+        a {
+            width: fit-content;
+            align-self: center;
+        }
+
+    }
+
+    button {
+        background-color: var(--btn-color);
+        color: var(--btn-text-color);
+        border: none;
+        border-radius: 20px;
+        width: 100px;
+        height: 50px;
+        font-size: 20px;
+        font-weight: bold;
+        box-shadow: 0 4px 4px rgba(0,0,0,0.25);
+        transition: box-shadow 200ms ease-in-out, transform 200ms ease-in-out;
+    }
+
+    button:hover{
+        transform: scale(1.05);
+
+    }
+
+    button:active {
+        transform: translateY(2px);
+        box-shadow: 0 2px 2px rgba(0,0,0,0.25);
+    }
+}
+
+.colorModeContainer {
+    position: relative;
+}
+
+.colorMode{
+    position: absolute;
+    right: 20;
+    width: 25px;
+}
+
+.colorMode:hover {
+    cursor: pointer;
+}
+
+.description {
+    font-size: 16px;
+    font-weight: 300;
+    text-align: center;
+    white-space: normal;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    max-width: 45;
+    animation: animated-text 3s steps(50,end) 1s 1 normal both, animated-cursor 600ms steps(50, end) infinite;
+   
+}
+
+/* Keyframes for text animation */ 
+@keyframes animated-text {
+    from {
+      width: 0;
+    }
+    to {
+      width: 45ch; /* Fill the available width */
+    }
+}
+  
+  /* Keyframes for cursor animation */
+@keyframes animated-cursor {
+    from {
+        border-right-color: rgba(0, 255, 0, 0.75);
+    }
+    to {
+      border-right-color: transparent;
+    }
+}
+
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    gap: 20px;
+}
+
+@media (min-width: 1200px){
+    .container{
+        flex-direction: row;
+        justify-content: center;
+        gap: 40px;
+        text-align: left;
+    }
+
+    .colorModeContainer {
+        order: 2;
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        position: relative;
+        flex: 1;
+
+        .hero{
+            max-width: 300px;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .colorMode{
+            position: relative;
+        }
+
+
+    }
+
+   
+
+
+    .info{
+        order: 1;
+        align-items: flex-start;
+        justify-content: center;
+        flex: 2;
+        text-align: left;
+        gap: 20px;
+
+    }
+
+    .description{
+
+        text-align: left;
+        width: 100%;
+    }
+}

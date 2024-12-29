@@ -1,0 +1,92 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+    height: 100vh;
+    min-height: 500px;
+
+    h1{
+        text-decoration: underline;
+    }
+    
+}
+
+
+.projectContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Dynamic columns */
+    gap: 20px;
+    width: 100%; /* Full width of the container */
+    justify-items: center; /* Center grid items horizontally */
+}
+
+.projectContainer a {
+    text-decoration: none;
+    text-align: center; /* Ensures text inside the links is centered */
+}
+
+.projectContainer img {
+    width: 100%;
+    max-width: 256px;
+    border-radius: 10px;
+    height: auto; /* Keeps images proportional */
+    display: block;
+}
+
+.projectContainer h3 {
+    margin: 10px 0 5px;
+    text-align: center;
+    font-size: 1.2rem;
+    text-decoration: underline;
+}
+
+.projectContainer p {
+    margin: 0;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+button {
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+button:hover img {
+    transform: scale(1.05);
+    transition: transform 200ms ease-in-out;
+}
+
+button:active img {
+    transform: translateY(2px);
+}
+
+
+@media (max-width: 1280px) {
+    .projectContainer {
+        grid-template-columns: repeat(3, 1fr); /* Force 3 columns for tablets */
+    }
+}
+
+@media (max-width: 1024px) {
+    .projectContainer {
+        grid-template-columns: repeat(3, 1fr); /* Force 3 columns for tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .projectContainer {
+        grid-template-columns: repeat(2, 1fr); /* Force 2 columns for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .projectContainer {
+        grid-template-columns: 1fr; /* Single column for mobile screens */
+    }
+}
+
