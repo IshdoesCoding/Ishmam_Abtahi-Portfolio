@@ -11,7 +11,11 @@
     }
 
     p{
-        color: #fff;
+        color: var(--text-color);
+    }
+
+    a{
+        color: var(--text-color);
     }
 
 }
