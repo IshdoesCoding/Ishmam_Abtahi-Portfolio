@@ -15,21 +15,21 @@ function Projects() {
                 <a href = "https://github.com/IshdoesCoding/MyFit"  target = "_blank" >
                     <button><img src ={fitlift} alt = "first app" /></button>
                     <h3>Fitlift</h3>
-                    <p>Documenting your fitness journey</p>
+                    <p>will be in github soon</p>
                 </a>
 
                 
                 <a href = "https://github.com/IshdoesCoding/Stock-Predictor"  target = "_blank" >
                     <button><img src ={stock_predictor} alt = "first app" /></button>
 
-                    <h3>Stock Predictor</h3>
-                    <p>Predicts future stock</p>
+                    <h3>Stock Analytics</h3>
+                    <p>will be in github soon</p>
                 </a>
         
                 <a href = "https://github.com/IshdoesCoding/Habit-Tracker"  target = "_blank" >
                     <button><img src ={habit_tracker} alt = "first app" /></button>
                     <h3>Habit Tracker</h3>
-                    <p>keep tracks of your habit</p>
+                    <p>will be in github soon</p>
                 </a>
  
         

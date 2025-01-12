@@ -21,7 +21,6 @@ export const ThemeProvider = ({children}) => {
 
     // eslint-disable-next-line no-undef
     const toggleTheme = () => {
-        console.log('hello')
         setTheme((prevTheme) => (prevTheme === "light" ? "dark":'light'))
     
     }
