@@ -41,7 +41,7 @@ function Hero() {
 
             <div className="animated-text-container"> </div>
 
-            <p className={styles.description}> I'm a first-year UVA student majoring in Computer Science, with a passion for coding and anything technology. </p>
+            <p className={styles.description}> I'm a first-year UVA student majoring in Computer Engineering, with a passion for coding and anything technology. </p>
 
 
 
