@@ -7,6 +7,7 @@
   --text-color: #222;
   --form-text-color: #555;
   --footer-text-color: #888;
+  --nav-icon-color: #0987f2;
 }
 
 [data-theme= 'dark'] {
@@ -17,6 +18,8 @@
   --text-color: #fff;
   --form-text-color: #fff;
   --footer-text-color: #bbb;
+  --nav-icon-color: #222;
+
 }
 
 body {
