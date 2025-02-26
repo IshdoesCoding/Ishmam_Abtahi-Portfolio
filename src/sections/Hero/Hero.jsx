@@ -7,7 +7,7 @@ import linkedin_dark from '../../assets/linkedin-dark.svg'
 
 import github_light from '../../assets/github-light.svg'
 import github_dark from '../../assets/github-dark.svg'
-import CV from '../../assets/cv.pdf'
+import CV from '../../assets/Ishmam_A_Resume.pdf'
 import {useTheme} from '../../common/ThemeContext'
 
 
