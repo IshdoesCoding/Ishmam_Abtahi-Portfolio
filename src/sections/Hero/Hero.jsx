@@ -7,7 +7,7 @@ import linkedin_dark from '../../assets/linkedin-dark.svg'
 
 import github_light from '../../assets/github-light.svg'
 import github_dark from '../../assets/github-dark.svg'
-import CV from '../../assets/Ishmam_A_Resume.pdf'
+import CV from '../../assets/Ishmam_Abtahi_Resume.pdf'
 import {useTheme} from '../../common/ThemeContext'
 
 
@@ -33,7 +33,7 @@ function Hero() {
                 <a href="https://www.linkedin.com/in/ishmam-abtahi-60601a324/" target="_blank"> 
                     <img src={linkedinIcon} alt="LinkedIn Icon" /> 
                 </a>
-                <a href="https://github.com/IshdoesCoding" target="_blank"> 
+                <a href="https://github.com/IshdoesCoding?tab=repositories" target="_blank"> 
                     <img src={githubIcon} alt=" Github Icon" /> 
                 </a>
 
