@@ -2,91 +2,230 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 30px;
     text-align: center;
     height: 100vh;
-    min-height: 500px;
+    min-height: 600px;
+    padding: 20px;
 
-    h1{
+    h1 {
         text-decoration: underline;
+        margin-bottom: 20px;
     }
-    
 }
 
-
-.projectContainer {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Dynamic columns */
+.carousel {
+    display: flex;
+    align-items: center;
     gap: 20px;
-    width: 100%; /* Full width of the container */
-    justify-items: center; /* Center grid items horizontally */
-}
-
-.projectContainer a {
-    text-decoration: none;
-    text-align: center; /* Ensures text inside the links is centered */
-}
-
-.projectContainer img {
     width: 100%;
-    max-width: 256px;
-    border-radius: 10px;
-    height: auto; /* Keeps images proportional */
-    display: block;
+    max-width: 900px;
+    position: relative;
 }
 
-.projectContainer h3 {
-    margin: 10px 0 5px;
-    text-align: center;
-    font-size: 1.2rem;
+.navButton {
+    background-color: var(--btn-color);
+    color: var(--btn-text-color);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 200ms ease-in-out;
+    z-index: 2;
+}
+
+.navButton:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.navButton:active {
+    transform: scale(0.95);
+}
+
+.projectWindow {
+    flex: 1;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    background-color: var(--project-card-bg);
+}
+
+.projectSlider {
+    display: flex;
+    transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+}
+
+.projectSlide {
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.projectCard {
+    background-color: var(--background-color);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 300ms ease-in-out;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px;
+}
+
+.projectCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.projectImage {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 300ms ease-in-out;
+}
+
+.projectCard:hover .projectImage {
+    transform: scale(1.05);
+}
+
+.projectContent {
+    padding: 25px;
+    text-align: left;
+}
+
+.projectContent h3 {
+    margin: 0 0 15px 0;
+    font-size: 1.5rem;
+    color: var(--text-color);
     text-decoration: underline;
 }
 
-.projectContainer p {
-    margin: 0;
-    text-align: center;
+.projectContent p {
+    margin: 0 0 20px 0;
+    color: var(--text-color);
+    line-height: 1.6;
     font-size: 1rem;
-    line-height: 1.5;
 }
 
-button {
+.projectLinks {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.projectLink {
+    background-color: var(--btn-color);
+    color: var(--btn-text-color);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: all 200ms ease-in-out;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.projectLink:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.projectLink:active {
+    transform: translateY(0);
+}
+
+.indicators {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
     border: none;
-    background: none;
-    padding: 0;
+    background-color: var(--project-color);
     cursor: pointer;
+    transition: all 200ms ease-in-out;
+    opacity: 0.5;
 }
 
-button:hover img {
-    transform: scale(1.05);
-    transition: transform 200ms ease-in-out;
+.indicator.active {
+    background-color: var(--btn-color);
+    opacity: 1;
+    transform: scale(1.2);
 }
 
-button:active img {
-    transform: translateY(2px);
+.indicator:hover {
+    opacity: 0.8;
+    transform: scale(1.1);
 }
 
-
-@media (max-width: 1280px) {
-    .projectContainer {
-        grid-template-columns: repeat(3, 1fr); /* Force 3 columns for tablets */
-    }
-}
-
-@media (max-width: 1024px) {
-    .projectContainer {
-        grid-template-columns: repeat(3, 1fr); /* Force 3 columns for tablets */
-    }
-}
-
+/* Responsive Design */
 @media (max-width: 768px) {
-    .projectContainer {
-        grid-template-columns: repeat(2, 1fr); /* Force 2 columns for tablets */
+    .container {
+        height: auto;
+        min-height: 500px;
+        padding: 15px;
+    }
+
+    .carousel {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .navButton {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .projectCard {
+        margin: 10px;
+    }
+
+    .projectImage {
+        height: 200px;
+    }
+
+    .projectContent {
+        padding: 20px;
+    }
+
+    .projectContent h3 {
+        font-size: 1.3rem;
+    }
+
+    .projectLinks {
+        justify-content: center;
     }
 }
 
 @media (max-width: 480px) {
-    .projectContainer {
-        grid-template-columns: 1fr; /* Single column for mobile screens */
+    .projectContent {
+        padding: 15px;
+    }
+
+    .projectContent h3 {
+        font-size: 1.2rem;
+    }
+
+    .projectContent p {
+        font-size: 0.9rem;
+    }
+
+    .projectLink {
+        padding: 8px 16px;
+        font-size: 0.9rem;
     }
 }
-
