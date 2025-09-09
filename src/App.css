@@ -14,7 +14,7 @@
   --background-color: linear-gradient(135deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #1a1a2e 75%, #2d1b69 100%);
   --btn-color: #fff;
   --btn-text-color: #1a1a2e;
-  --project-card-bg: rgba(255, 255, 255, 0.95);
+  --project-card-bg: rgba(255, 255, 255, 0.1);
   --text-color: #fff;
   --form-text-color: #fff;
   --footer-text-color: #bbb;
