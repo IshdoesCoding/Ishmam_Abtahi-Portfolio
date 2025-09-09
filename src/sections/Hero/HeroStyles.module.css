@@ -9,9 +9,15 @@
     margin-bottom: 60px;
 
     .hero{
-        max-width: 200px;
+        max-width: 280px;
+        border-radius: 50%;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        transition: transform 300ms ease-in-out;
     }
 
+    .hero:hover {
+        transform: scale(1.05);
+    }
     span {
         display: flex;
         gap: 10px;
@@ -33,26 +39,30 @@
     }
 
     button {
-        background-color: var(--btn-color);
+        background: linear-gradient(135deg, var(--btn-color), #0066cc);
         color: var(--btn-text-color);
         border: none;
-        border-radius: 20px;
-        width: 100px;
-        height: 50px;
-        font-size: 20px;
+        border-radius: 30px;
+        width: 140px;
+        height: 55px;
+        font-size: 18px;
         font-weight: bold;
-        box-shadow: 0 4px 4px rgba(0,0,0,0.25);
-        transition: box-shadow 200ms ease-in-out, transform 200ms ease-in-out;
+        box-shadow: 0 8px 24px rgba(9, 135, 242, 0.4);
+        transition: all 300ms ease-in-out;
+        text-transform: uppercase;
+        letter-spacing: 1px;
     }
 
     button:hover{
-        transform: scale(1.05);
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 12px 32px rgba(9, 135, 242, 0.6);
+        background: linear-gradient(135deg, #0066cc, var(--btn-color));
 
     }
 
     button:active {
         transform: translateY(2px);
-        box-shadow: 0 2px 2px rgba(0,0,0,0.25);
+        box-shadow: 0 4px 16px rgba(9, 135, 242, 0.3);
     }
 }
 
@@ -74,12 +84,19 @@
     font-size: 16px;
     font-weight: 300;
     text-align: center;
-    white-space: normal;
+    white-space: nowrap;
     overflow: hidden;
     position: relative;
     text-align: center;
-    max-width: 30;
-    animation: animated-text 3s steps(50,end) 1s 1 normal both, animated-cursor 600ms steps(50, end) infinite;
+    max-width: 30ch;
+    border-right: 3px solid var(--btn-color);
+    animation: animated-text 4s steps(60,end) 0.5s 1 normal both, animated-cursor 800ms steps(60, end) infinite;
+    font-family: 'Roboto Mono', monospace;
+    background: linear-gradient(135deg, var(--text-color), var(--btn-color));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 500;
    
 }
 
@@ -89,14 +106,14 @@
       width: 0;
     }
     to {
-      width: 30ch; /* Fill the available width */
+      width: 100%; /* Fill the available width */
     }
 }
   
   /* Keyframes for cursor animation */
 @keyframes animated-cursor {
     from {
-        border-right-color: rgba(0, 255, 0, 0.75);
+        border-right-color: var(--btn-color);
     }
     to {
       border-right-color: transparent;
@@ -131,7 +148,7 @@
         flex: 1;
 
         .hero{
-            max-width: 300px;
+            max-width: 350px;
             justify-content: center;
             width: 100%;
         }
