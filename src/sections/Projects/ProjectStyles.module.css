@@ -4,9 +4,9 @@
     align-items: center;
     gap: 30px;
     text-align: center;
-    height: 100vh;
-    min-height: 600px;
+    min-height: 700px;
     padding: 20px;
+    margin: 60px 0;
 
     h1 {
         text-decoration: underline;
