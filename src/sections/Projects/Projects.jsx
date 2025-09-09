@@ -7,19 +7,19 @@ function Projects() {
     const projects = [
         {
             id: 1,
-            title: "E-Commerce Platform",
-            description: "A full-stack e-commerce solution with React, Node.js, and MongoDB. Features include user authentication, shopping cart, and payment integration.",
-            image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=400",
-            github: "https://github.com/example/ecommerce-platform",
-            demo: "https://ecommerce-demo.com"
+            title: "AI Resume Analyzer (Resumify)",
+            description: "Built an AI resume analyzer with React Router v7 and Puter.js backend. Provided tailored resume feedback based on job and company data.",
+            image: "https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=400",
+            github: "https://github.com/IshdoesCoding/AI-Resume-Analyzer-Resumify-",
+            demo: "https://ai-resume-analyzer-resumify.vercel.app/"
         },
         {
             id: 2,
-            title: "Weather Dashboard",
-            description: "A responsive weather application built with React and OpenWeather API. Displays current weather, forecasts, and interactive maps.",
-            image: "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=400",
-            github: "https://github.com/example/weather-dashboard",
-            demo: "https://weather-dashboard-demo.com"
+            title: "Home SOC: Personal Cyber Defense Virtual Lab",
+            description: "Set up a home Security Operations Center (SOC) with Azure to monitor live cyber threats. Used a SIEM tool to detect and analyze over 100 suspicious events in the first month.",
+            image: "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=400",
+            github: "#",
+            demo: "#"
         }
     ];
 
