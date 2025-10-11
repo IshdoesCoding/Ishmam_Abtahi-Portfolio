@@ -74,7 +74,7 @@ function Hero() {
 
             </span>
 
-            <p className={styles.description}> I'm a first-year UVA student majoring in Computer Engineering, with a passion for coding and anything technology. </p>
+            <p className={styles.description}> I'm a second-year UVA student majoring in Computer Engineering, with a passion for coding and anything technology. </p>
 
 
 
