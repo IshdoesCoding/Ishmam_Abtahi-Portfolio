@@ -59,22 +59,20 @@ function Hero() {
         </div>
 
         <div className={styles.info}>
-            <h1>Ishmam Abtahi <br/> </h1>
-            <h2>Software Developer</h2>
-            <span>
-                <a href="https://www.linkedin.com/in/ishmam-abtahi-60601a324/" target="_blank"> 
-                    <img src={linkedinIcon} alt="LinkedIn Icon" /> 
-                </a>
-                <a href="https://github.com/IshdoesCoding?tab=repositories" target="_blank"> 
-                    <img src={githubIcon} alt=" Github Icon" /> 
-                </a>
-
-            </span>
-
+            <h1>Ishmam Abtahi</h1>
             <div className={styles.animatedTextContainer}>
               <span className={styles.animatedText}>{text}</span>
               <span className={styles.cursor}>|</span>
             </div>
+            <span>
+                <a href="https://www.linkedin.com/in/ishmam-abtahi-60601a324/" target="_blank">
+                    <img src={linkedinIcon} alt="LinkedIn Icon" />
+                </a>
+                <a href="https://github.com/IshdoesCoding?tab=repositories" target="_blank">
+                    <img src={githubIcon} alt=" Github Icon" />
+                </a>
+
+            </span>
 
             <p className={styles.description}> I'm a first-year UVA student majoring in Computer Engineering, with a passion for coding and anything technology. </p>
 
