@@ -1,15 +1,19 @@
 .container{
     display: flex;
     flex-direction: column;
-    display: center;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
     text-align: center;
-    height: 100dvh;
-    min-height: 500px;
+    min-height: 100vh;
+    padding: 40px 20px;
     margin-bottom: 60px;
+    box-sizing: border-box;
 
     .hero{
+        width: 100%;
         max-width: 320px;
+        height: auto;
         border-radius: 50%;
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         transition: transform 300ms ease-in-out;
@@ -162,21 +166,23 @@
 
 @media (max-width: 768px) {
     .container {
-        padding: 20px 15px;
+        padding: 30px 20px;
         margin-bottom: 40px;
+        min-height: auto;
     }
 
     .hero {
-        max-width: 250px;
+        max-width: 220px;
     }
 
     .animatedTextContainer {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .description {
         font-size: 14px;
-        max-width: 95%;
+        max-width: 100%;
+        padding: 0 10px;
         white-space: normal;
     }
 
@@ -185,23 +191,43 @@
         height: 45px;
         font-size: 14px;
     }
+
+    h1 {
+        font-size: 24px;
+    }
 }
 
 @media (max-width: 480px) {
+    .container {
+        padding: 20px 15px;
+    }
+
     .hero {
-        max-width: 200px;
+        max-width: 180px;
     }
 
     .animatedTextContainer {
-        font-size: 18px;
+        font-size: 16px;
+        min-height: 30px;
     }
 
     .description {
         font-size: 13px;
+        padding: 0 5px;
     }
 
     span a img {
         width: 25px;
+    }
+
+    button {
+        width: 130px;
+        height: 42px;
+        font-size: 13px;
+    }
+
+    h1 {
+        font-size: 20px;
     }
 }
 
