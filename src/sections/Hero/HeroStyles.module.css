@@ -147,7 +147,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
     gap: 20px;
 }
 
