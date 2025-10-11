@@ -89,7 +89,6 @@
     animation: animated-text 4s steps(29,end) 0.5s 1 normal both, animated-cursor 800ms steps(29, end) infinite;
     font-family: 'Roboto Mono', monospace;
     color: var(--text-color);
-    font-weight: 400;
    
 }
 
