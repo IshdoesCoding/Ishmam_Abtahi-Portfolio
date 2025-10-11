@@ -16,7 +16,7 @@ function Projects() {
         {
             id: 2,
             title: "Home SOC: Personal Cyber Defense Virtual Lab",
-            description: "Set up a home Security Operations Center (SOC) with Azure to monitor live cyber threats. Used a SIEM tool to detect and analyze over 100 suspicious events in the first month.",
+            description: "Set up a home Security Operations Center (SOC) with Azure to monitor live cyber threats. Utilized Microsoft Sentinel to detect and analyze over 100 suspicious events in the first month.",
             image: "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=400",
             github: "#",
             demo: "#"
