@@ -19,7 +19,7 @@ function Skills() {
     },
     {
       title: "Security & Analysis",
-      skills: ["Cybersecurity", "SIEM Tools", "Threat Analysis"]
+      skills: ["Cybersecurity", "SIEM Tools", "Threat Analysis", "Splunk"]
     }
   ]
 
