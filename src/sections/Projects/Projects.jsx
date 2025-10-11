@@ -68,24 +68,26 @@ function Projects() {
                                     <div className={styles.projectContent}>
                                         <h3>{project.title}</h3>
                                         <p>{project.description}</p>
-                                        <div className={styles.projectLinks}>
-                                            <a 
-                                                href={project.github} 
-                                                target="_blank" 
-                                                rel="noopener noreferrer"
-                                                className={styles.projectLink}
-                                            >
-                                                GitHub
-                                            </a>
-                                            <a 
-                                                href={project.demo} 
-                                                target="_blank" 
-                                                rel="noopener noreferrer"
-                                                className={styles.projectLink}
-                                            >
-                                                Live Demo
-                                            </a>
-                                        </div>
+                                        {project.github && project.github !== "#" && (
+                                            <div className={styles.projectLinks}>
+                                                <a
+                                                    href={project.github}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className={styles.projectLink}
+                                                >
+                                                    GitHub
+                                                </a>
+                                                <a
+                                                    href={project.demo}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className={styles.projectLink}
+                                                >
+                                                    Live Demo
+                                                </a>
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
                             </div>
