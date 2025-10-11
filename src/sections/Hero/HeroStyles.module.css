@@ -63,6 +63,35 @@
     }
 }
 
+.animatedTextContainer {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--btn-color);
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+}
+
+.animatedText {
+    font-family: 'Roboto Mono', monospace;
+}
+
+.cursor {
+    animation: blink 1s infinite;
+    color: var(--btn-color);
+}
+
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    51%, 100% {
+        opacity: 0;
+    }
+}
+
 .colorModeContainer {
     position: relative;
 }
