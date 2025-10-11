@@ -11,7 +11,7 @@ function Skills() {
   const skillCategories = [
     {
       title: "Programming Languages",
-      skills: ["Python", "JavaScript", "React", "HTML", "CSS"]
+      skills: ["Python", "JavaScript", "React", "HTML", "CSS", "Java", "Assembly"]
     },
     {
       title: "Cloud & Infrastructure",
