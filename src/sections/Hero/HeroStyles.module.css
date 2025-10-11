@@ -64,7 +64,7 @@
 }
 
 .animatedTextContainer {
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 600;
     color: var(--btn-color);
     min-height: 40px;
@@ -110,15 +110,15 @@
     font-size: 16px;
     font-weight: 300;
     text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
+    white-space: normal;
+    overflow: visible;
     position: relative;
-    max-width: 30ch;
+    max-width: 90%;
     border-right: 3px solid var(--btn-color);
     animation: animated-text 4s steps(29,end) 0.5s 1 normal both, animated-cursor 800ms steps(29, end) infinite;
     font-family: 'Roboto Mono', monospace;
     color: var(--text-color);
-   
+
 }
 
 /* Keyframes for text animation */ 
@@ -151,6 +151,51 @@
     gap: 20px;
 }
 
+@media (max-width: 768px) {
+    .container {
+        padding: 20px 15px;
+        margin-bottom: 40px;
+    }
+
+    .hero {
+        max-width: 250px;
+    }
+
+    .animatedTextContainer {
+        font-size: 20px;
+    }
+
+    .description {
+        font-size: 14px;
+        max-width: 95%;
+        white-space: normal;
+    }
+
+    button {
+        width: 140px;
+        height: 45px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        max-width: 200px;
+    }
+
+    .animatedTextContainer {
+        font-size: 18px;
+    }
+
+    .description {
+        font-size: 13px;
+    }
+
+    span a img {
+        width: 25px;
+    }
+}
+
 @media (min-width: 1200px){
     .container{
         flex-direction: row;
@@ -181,7 +226,7 @@
 
     }
 
-   
+
 
 
     .info{
@@ -198,5 +243,10 @@
 
         text-align: left;
         width: 100%;
+    }
+
+    .animatedTextContainer {
+        font-size: 28px;
+        justify-content: flex-start;
     }
 }

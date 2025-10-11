@@ -51,17 +51,16 @@
     .container{
         flex-direction: column;
         align-items: flex-start;
-
+        padding: 10px;
     }
 
     .navbar{
-
         position: relative;
         flex-direction: column;
         align-items: flex-end;
         gap: 11px;
         z-index: 3;
-
+        width: 100%;
     }
 
     .navicon{
@@ -72,19 +71,23 @@
         background-color: var(--nav-icon-color);
         border: 1px var(--btn-text-color);
         padding: 1px
-        
     }
-
 
     .navitems{
         display: none;
         flex-direction: column;
-        gap: 20px;
+        gap: 15px;
         margin-top: 40px;
         background-color: var(--btn-text-color);
-        /*border: 1px solid #222;
-        border-radius: 5px;*/
-        padding: 10px
+        padding: 15px;
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .navitems a{
+        font-size: 20px;
+        width: 100%;
+        text-align: center;
     }
 
     .showMenu{
@@ -94,9 +97,11 @@
     .hideMenu{
         display: none;
     }
-    
+}
 
-
-
+@media screen and (max-width: 480px){
+    .navitems a{
+        font-size: 18px;
+    }
 } 
 
