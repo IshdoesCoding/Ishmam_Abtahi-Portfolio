@@ -102,8 +102,10 @@
 
 .colorMode{
     position: absolute;
-    right: 20;
+    top: 10px;
+    right: 10px;
     width: 25px;
+    z-index: 10;
 }
 
 .colorMode:hover {
