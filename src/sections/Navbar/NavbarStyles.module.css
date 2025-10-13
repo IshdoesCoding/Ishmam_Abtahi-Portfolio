@@ -137,6 +137,7 @@
         border-radius: 0;
         transition: all 0.3s ease;
         z-index: 10;
+        filter: invert(var(--icon-invert, 0));
     }
 
     .navicon:active {
