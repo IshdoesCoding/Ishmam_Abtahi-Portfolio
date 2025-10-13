@@ -129,10 +129,12 @@
         position: relative;
         top: 0;
         left: 0;
-        background-color: var(--nav-icon-color);
-        border: 1px solid rgba(var(--text-rgb), 0.2);
-        padding: 10px;
-        border-radius: 12px;
+        width: 32px;
+        height: 32px;
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        border-radius: 0;
         transition: all 0.3s ease;
         z-index: 10;
     }
@@ -208,7 +210,9 @@
     }
 
     .navicon {
-        padding: 8px;
+        width: 28px;
+        height: 28px;
+        padding: 0;
     }
 
     .navitems{
