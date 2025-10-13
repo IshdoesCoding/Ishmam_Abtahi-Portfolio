@@ -10,7 +10,7 @@
   --form-text-color: #555;
   --footer-text-color: #888;
   --nav-icon-color: #0987f2;
-  --icon-invert: 0;
+  --icon-invert: 1;
 }
 
 [data-theme= 'dark'] {
@@ -24,7 +24,7 @@
   --form-text-color: #fff;
   --footer-text-color: #bbb;
   --nav-icon-color: #222;
-  --icon-invert: 1;
+  --icon-invert: 0;
 
 }
 
