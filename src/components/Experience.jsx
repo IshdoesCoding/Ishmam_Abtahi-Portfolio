@@ -51,7 +51,7 @@ const entries = [
     accent: 'emerald',
     period: 'Apr 2025 – Present',
     badge: null,
-    title: 'Vice-President',
+    title: 'President',
     org: 'Students Who Advance in Technology (SWAT)',
     bullets: [
       'Co-lead a 50+ member student organization delivering technology solutions for UVA departments and Charlottesville organizations',
