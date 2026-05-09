@@ -89,7 +89,7 @@ export default function About() {
             <p className="text-slate-400 leading-relaxed">
               This summer I&apos;m joining{' '}
               <span className="text-rose-400 font-medium">GuidePoint Security</span> as a Cybersecurity
-              Engineering Intern — bringing together my passion for secure software and real-world
+              Engineering Intern, bringing together my passion for secure software and real-world
               threat analysis.
             </p>
 
