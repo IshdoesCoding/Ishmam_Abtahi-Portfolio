@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Code2, Shield, Lightbulb, Users } from 'lucide-react';
-import profileImg from '../assets/Hero_profile.JPG';
+import profileImg from '../assets/ish_final.png';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
