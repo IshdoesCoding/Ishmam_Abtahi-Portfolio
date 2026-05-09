@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 import { GithubIcon } from './icons';
 import socLabImg from '../assets/soc_lab.png';
+import dcdcImg from '../assets/dcdc.jpg';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -54,7 +55,7 @@ const projects = [
     tags: ['KiCad', 'PCB Design', 'Hardware', 'WaveForms', 'Soldering'],
     github: null,
     demo: null,
-    image: 'https://images.pexels.com/photos/163100/circuit-electronic-components-163100.jpg?auto=compress&cs=tinysrgb&w=800',
+    image: dcdcImg,
     flip: true,
   },
 ];
