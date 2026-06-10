@@ -37,8 +37,8 @@ const projects = [
   {
     title: 'Uspot — Campus Events Startup',
     description:
-      'A campus platform aggregating real-time events through a map-based and event card interface. Built in 7 hours at the Claude-for-Good hackathon. Placed 6th out of 50 teams and secured 40+ waitlist users.',
-    impact: '40+ waitlist users · 6th / 50 teams',
+      'A campus platform aggregating real-time events through a map-based and event card interface. Built in 7 hours at the Claude-for-Good hackathon. Placed 6th out of 50 teams and secured 20+ waitlist users. Currently developing live event feeds, club integrations, and push notifications.',
+    impact: '20+ waitlist users · 6th / 50 teams',
     accent: 'emerald',
     tags: ['React', 'Maps API', 'Real-time', 'Hackathon'],
     github: null,
@@ -47,12 +47,12 @@ const projects = [
     flip: false,
   },
   {
-    title: 'DC-DC Boost Converter',
+    title: 'Audio-Reactive LED Driver PCB',
     description:
-      'Designed the full schematic and PCB layout in KiCad for a DC-DC boost converter. Assembled and soldered the circuit using a 555 timer IC and verified a clean 5V to ~13V boost using WaveForms.',
-    impact: '5V → 13V verified',
+      'Designed a full audio-reactive LED driver in KiCad: AC summing amp, Sallen-Key LP/HP filters, peak detectors, triangle-wave oscillator, and analog + PWM LED drivers. Assembled, soldered, and verified signal integrity with WaveForms.',
+    impact: 'Full analog signal chain',
     accent: 'rose',
-    tags: ['KiCad', 'PCB Design', 'Hardware', 'WaveForms', 'Soldering'],
+    tags: ['KiCad', 'PCB Design', 'Analog Circuits', 'WaveForms', 'Signal Analysis'],
     github: null,
     demo: null,
     image: dcdcImg,
