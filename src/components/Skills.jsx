@@ -41,6 +41,7 @@ const categories = [
     accent: 'rose',
     skills: [
       { name: 'Splunk SIEM', level: 'Proficient' },
+      { name: 'Suricata IDS', level: 'Proficient' },
       { name: 'Velociraptor / OpenVAS', level: 'Proficient' },
       { name: 'Wireshark', level: 'Proficient' },
       { name: 'BurpSuite', level: 'Familiar' },

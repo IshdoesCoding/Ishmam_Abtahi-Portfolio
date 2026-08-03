@@ -11,6 +11,30 @@ const fadeUp = {
 
 const projects = [
   {
+    title: 'LLM Prompt Injection Benchmark',
+    description:
+      'A prompt-injection vulnerability benchmark spanning the OWASP LLM01:2025 taxonomy — direct/indirect injection, payload splitting, and obfuscation/multilingual attacks — scored by a deterministic, regex-based pipeline that deliberately avoids LLM-as-judge scoring to eliminate the risk of the judge itself being manipulated. Evaluated 2 prompt-hardening defenses, cutting attack success rate by 33%.',
+    impact: '33% attack reduction',
+    accent: 'amber',
+    tags: ['Python', 'LLM Security', 'OWASP LLM01', 'Prompt Injection'],
+    github: 'https://github.com/IshdoesCoding/LLM-Prompt-Injection',
+    demo: null,
+    image: 'https://images.pexels.com/photos/4164418/pexels-photo-4164418.jpeg?auto=compress&cs=tinysrgb&w=800',
+    flip: false,
+  },
+  {
+    title: 'SSH & Web Honeypot',
+    description:
+      'A low-interaction SSH and HTTP honeypot deployed in Python on a Hostinger VPS to capture real-world attacker behavior against internet-facing services. Logged 200+ connection attempts and 60+ credential-stuffing attempts over 2 weeks, identifying top attacked credentials and source IPs across 8+ countries via a custom log-analysis script.',
+    impact: '200+ attempts · 8+ countries',
+    accent: 'indigo',
+    tags: ['Python', 'Honeypot', 'Network Security', 'VPS'],
+    github: 'https://github.com/IshdoesCoding/Honeypot-project',
+    demo: null,
+    image: 'https://images.pexels.com/photos/5480781/pexels-photo-5480781.jpeg?auto=compress&cs=tinysrgb&w=800',
+    flip: true,
+  },
+  {
     title: 'AI Resume Analyzer — Resumify',
     description:
       'An AI-powered resume analysis platform that delivers tailored feedback based on job and company data. Built with React.js Router v7 and Puter.js backend, attracting 200+ users.',
@@ -84,6 +108,18 @@ const accentMap = {
     tag: 'bg-rose-400/10 text-rose-400',
     icon: 'text-rose-400 hover:text-rose-300',
     glow: 'group-hover:shadow-[0_0_40px_rgba(251,113,133,0.12)]',
+  },
+  amber: {
+    badge: 'bg-amber-400/10 text-amber-400 border-amber-400/20',
+    tag: 'bg-amber-400/10 text-amber-400',
+    icon: 'text-amber-400 hover:text-amber-300',
+    glow: 'group-hover:shadow-[0_0_40px_rgba(251,191,36,0.12)]',
+  },
+  indigo: {
+    badge: 'bg-indigo-400/10 text-indigo-400 border-indigo-400/20',
+    tag: 'bg-indigo-400/10 text-indigo-400',
+    icon: 'text-indigo-400 hover:text-indigo-300',
+    glow: 'group-hover:shadow-[0_0_40px_rgba(129,140,248,0.12)]',
   },
 };
 

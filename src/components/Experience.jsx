@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { GraduationCap, Shield, Code, Users } from 'lucide-react';
+import { GraduationCap, Shield, Code, Users, FlaskConical } from 'lucide-react';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -15,9 +15,21 @@ const entries = [
     title: 'Security Engineering Intern',
     org: 'GuidePoint Security — Reston, VA',
     bullets: [
-      'Engineering SOC-in-a-Box: a portable SOC lab integrating Splunk, Velociraptor, OpenVAS, and Active Directory on segmented Proxmox/Ludus infrastructure with firewall rules, authentication controls, and VLAN network isolation',
-      'Developing Ansible playbooks to automate VM provisioning and building a Python CLI (soccli.py) with tiered deployment profiles (Basic | Standard | Advanced) enabling hardware-aware one-command SOC deployment',
-      'Documenting infrastructure setup, troubleshooting procedures, and known issues to support team onboarding and reproducibility across deployment environments',
+      "Designed and deployed a dual-firewall (OPNsense) network segmentation layer aligned with NIST Cybersecurity Framework least-privilege principles, isolating a deliberately vulnerable DMZ (Vulhub) from SIEM, Forensic, and User VLANs via directional pf rules on both firewalls",
+      "Deployed Suricata as an inline IDS on the perimeter firewall's WAN interface, alerting on malicious traffic mapped to MITRE ATT&CK techniques via the Emerging Threats Open ruleset, and built a new Ansible firewall module to automate deployment across both firewalls",
+      "Patched the team's Python deployment CLI to detect and configure OPNsense/FreeBSD hosts, and found and fixed 5 pre-deployment bugs that would have caused failed or locked-out deployments, catching them through review against official documentation before rollout",
+    ],
+  },
+  {
+    icon: FlaskConical,
+    accent: 'amber',
+    period: 'Jul 2026 – Present',
+    badge: 'Current',
+    title: 'Researcher',
+    org: 'Dart Labs (UVA Cybersecurity Research Lab) — Charlottesville, VA',
+    bullets: [
+      'Conducting research with the Forensic Analysis and SOC Efficiency group on incident triage workflows and detection-pipeline performance for university security operations',
+      'Applying digital forensics and log-analysis techniques to evaluate SOC tooling efficiency, contributing findings to ongoing lab research initiatives',
     ],
   },
   {
@@ -54,7 +66,8 @@ const entries = [
     org: 'Students Who Advance in Technology (SWAT) — Charlottesville, VA',
     bullets: [
       'Founded and lead a 20+ member tech consulting organization partnering with 3 UVA departments per semester to deliver real automation and software solutions, from scoping through build to live presentation',
-      'Confirmed Data Science School partnerships for conference scheduling and expense report automation; actively scoping a third departmental project with UVA ITS',
+      'Led a team that built a computer lab for a local non-profit youth development center: sourced and refurbished 15+ recycled computers and set up the full lab environment (networking, OS imaging, software), now serving 50+ youth',
+      'Delivered Data Science School partnerships for conference scheduling and expense report automation, and scoped a new UVA ITS partnership to build a RAG-based chatbot over 100+ pages of internal security documentation, targeting a 50% reduction in analyst documentation lookup time',
     ],
   },
   {
@@ -65,8 +78,8 @@ const entries = [
     title: 'B.S. Computer & Electrical Engineering',
     org: 'University of Virginia — QuestBridge Scholar',
     bullets: [
-      'Minor in General Business; coursework in Data Structures & Algorithms, Cybersecurity, Digital Logic Design, Signals & Systems, and Applied Circuits',
-      'Certified: Google Professional Cybersecurity, Microsoft Azure AZ-900, AWS ML Foundation, Udacity Gen AI (AWS)',
+      'Minor in General Business; coursework in Data Structures & Algorithms, Intro to Cybersecurity, Computer Systems & Org, Digital Logic Design, Signals & Systems, and Discrete Math',
+      'Certified: CompTIA Security+, AWS Certified AI Practitioner, Google Professional Cybersecurity, Microsoft Azure AZ-900, AWS ML Foundation, Udacity Gen AI (AWS)',
       'Active in SWAT, engineering communities, and HackTheBox CTF competitions',
     ],
   },
@@ -92,6 +105,11 @@ const accentMap = {
     icon: 'bg-rose-400/10 text-rose-400 border-rose-400/20',
     dot: 'bg-rose-400',
     period: 'text-rose-400',
+  },
+  amber: {
+    icon: 'bg-amber-400/10 text-amber-400 border-amber-400/20',
+    dot: 'bg-amber-400',
+    period: 'text-amber-400',
   },
 };
 

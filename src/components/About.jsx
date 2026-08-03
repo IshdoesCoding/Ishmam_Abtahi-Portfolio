@@ -9,7 +9,7 @@ const fadeUp = {
 };
 
 const stats = [
-  { value: '4+', label: 'Projects Shipped' },
+  { value: '6+', label: 'Projects Shipped' },
   { value: '200+', label: 'App Users' },
   { value: '500+', label: 'Events Analyzed' },
   { value: "UVA '28", label: 'QuestBridge Scholar' },
@@ -82,15 +82,17 @@ export default function About() {
             </p>
             <p className="text-slate-400 leading-relaxed">
               I currently work as a{' '}
+              <span className="text-rose-400 font-medium">Security Engineering Intern at GuidePoint Security</span>,
+              building segmented network architectures and inline intrusion detection, and as a{' '}
               <span className="text-violet-400 font-medium">Cybersecurity Analyst Intern at UVA ITS</span>,
-              analyzing 500+ weekly security events in Splunk, and as a developer at the UVA School
-              of Data Science where I built a web app used by 50+ employees daily.
+              analyzing 500+ weekly security events in Splunk.
             </p>
             <p className="text-slate-400 leading-relaxed">
-              This summer I&apos;m joining{' '}
-              <span className="text-rose-400 font-medium">GuidePoint Security</span> as a Cybersecurity
-              Engineering Intern, bringing together my passion for secure software and real-world
-              threat analysis.
+              I&apos;m also a{' '}
+              <span className="text-amber-400 font-medium">Researcher at Dart Labs</span>, UVA&apos;s
+              cybersecurity research lab, studying incident triage workflows and SOC tooling
+              efficiency — bringing together my passion for secure software and real-world threat
+              analysis.
             </p>
 
             <div className="pt-4">
