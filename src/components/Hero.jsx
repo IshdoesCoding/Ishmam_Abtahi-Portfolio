@@ -244,11 +244,11 @@ export default function Hero() {
         />
       ))}
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 py-28 grid lg:grid-cols-2 gap-16 items-center w-full">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 pt-40 pb-28 sm:py-28 grid lg:grid-cols-2 gap-16 items-center w-full">
         {/* Left: text */}
         <div>
           <motion.div variants={fadeUp} initial="hidden" animate="show" className="mb-5">
-            <span className="inline-block font-display text-xs sm:text-sm tracking-[0.12em] uppercase text-amber-200 border border-amber-200/40 bg-[#2b3157]/60 rounded-full px-4 py-1.5">
+            <span className="inline-block whitespace-nowrap font-display text-[10px] min-[400px]:text-[11px] sm:text-sm tracking-[0.04em] sm:tracking-[0.12em] uppercase text-amber-200 border border-amber-200/40 bg-[#2b3157]/60 rounded-full px-3 sm:px-4 py-1.5">
               Incoming Cybersecurity Intern at Capital One
             </span>
           </motion.div>

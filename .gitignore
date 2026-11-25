@@ -26,3 +26,6 @@ dist-ssr
 
 # Old resumes with personal info (kept locally, never committed)
 _private_old_resumes/
+
+# Claude app output files (not part of the site)
+Claude outputs/
