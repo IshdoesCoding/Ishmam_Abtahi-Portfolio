@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Send } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './icons';
+import { FramedSection, SectionHeader } from './Ornate';
+import { useSectionAchievement } from '../game/GameContext';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -19,45 +21,37 @@ const socials = [
   },
   {
     label: 'LinkedIn',
-    handle: 'ishmam-abtahi',
-    href: 'https://linkedin.com/in/ishmam-abtahi',
+    handle: 'Ishmam Abtahi',
+    href: 'https://www.linkedin.com/in/ishmam-abtahi-60601a324/',
     icon: LinkedinIcon,
-    color: 'text-sky-400 hover:text-sky-300',
-    bg: 'hover:bg-sky-400/5',
+    color: 'text-sky-300 hover:text-sky-300',
+    bg: 'hover:bg-sky-200/5',
   },
   {
     label: 'Email',
     handle: 'ishmamabtahi17@gmail.com',
     href: 'mailto:ishmamabtahi17@gmail.com',
     icon: Mail,
-    color: 'text-violet-400 hover:text-violet-300',
-    bg: 'hover:bg-violet-400/5',
+    color: 'text-violet-300 hover:text-violet-300',
+    bg: 'hover:bg-violet-300/5',
   },
 ];
 
 export default function Contact() {
+  const sectionRef = useSectionAchievement('party_invite');
   const [form, setForm] = useState({ name: '', email: '', message: '' });
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const subject = encodeURIComponent(`Portfolio contact from ${form.name}`);
-    const body = encodeURIComponent(`${form.message}\n\n— ${form.name} (${form.email})`);
+    const body = encodeURIComponent(`${form.message}\n\nFrom: ${form.name} (${form.email})`);
     window.location.href = `mailto:ishmamabtahi17@gmail.com?subject=${subject}&body=${body}`;
   };
 
   return (
-    <section id="contact" className="section-padding bg-[#080d1e]">
+    <FramedSection id="contact" tone="b" sectionRef={sectionRef}>
       <div className="max-w-6xl mx-auto">
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: '-80px' }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold gradient-text mb-3">Get In Touch</h2>
-          <p className="text-slate-500 text-sm font-mono">// let&apos;s build something together</p>
-        </motion.div>
+        <SectionHeader title="Get In Touch" subtitle="Join the Party" />
 
         <div className="grid lg:grid-cols-5 gap-10">
           <motion.div
@@ -69,12 +63,12 @@ export default function Contact() {
           >
             <div className="glass-card rounded-2xl p-6">
               <div className="flex items-center gap-2 mb-2">
-                <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
-                <span className="text-emerald-400 text-sm font-mono">Available for work</span>
+                <span className="w-2 h-2 bg-emerald-300 rounded-full animate-pulse" />
+                <span className="text-emerald-300 text-sm font-mono">Open to connect</span>
               </div>
-              <p className="text-slate-400 text-sm leading-relaxed">
-                I&apos;m actively looking for internships and co-op opportunities in software
-                engineering or cybersecurity. Let&apos;s connect!
+              <p className="text-slate-200 text-sm leading-relaxed">
+                I&apos;m joining Capital One as a Cybersecurity Intern in Summer 2027. I&apos;m always
+                happy to talk about security, research, or what&apos;s next.
               </p>
             </div>
 
@@ -90,7 +84,7 @@ export default function Contact() {
                   <s.icon size={20} />
                 </div>
                 <div>
-                  <div className="text-xs text-slate-500 font-mono">{s.label}</div>
+                  <div className="text-xs text-slate-300 font-mono">{s.label}</div>
                   <div className={`text-sm font-medium transition-colors ${s.color}`}>{s.handle}</div>
                 </div>
               </a>
@@ -108,44 +102,44 @@ export default function Contact() {
             <form onSubmit={handleSubmit} className="glass-card rounded-2xl p-8 space-y-5">
               <div className="grid sm:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-xs text-slate-500 font-mono mb-2">Name</label>
+                  <label className="block text-xs text-slate-300 font-mono mb-2">Name</label>
                   <input
                     type="text"
                     required
                     value={form.name}
                     onChange={e => setForm({ ...form, name: e.target.value })}
                     placeholder="Your name"
-                    className="w-full bg-white/[0.04] border border-white/[0.07] rounded-xl px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-sky-400/40 focus:bg-white/[0.06] transition-all duration-200"
+                    className="w-full bg-white/[0.04] border border-white/[0.07] rounded-xl px-4 py-3 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-sky-300/40 focus:bg-white/[0.06] transition-all duration-200"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs text-slate-500 font-mono mb-2">Email</label>
+                  <label className="block text-xs text-slate-300 font-mono mb-2">Email</label>
                   <input
                     type="email"
                     required
                     value={form.email}
                     onChange={e => setForm({ ...form, email: e.target.value })}
                     placeholder="you@example.com"
-                    className="w-full bg-white/[0.04] border border-white/[0.07] rounded-xl px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-sky-400/40 focus:bg-white/[0.06] transition-all duration-200"
+                    className="w-full bg-white/[0.04] border border-white/[0.07] rounded-xl px-4 py-3 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-sky-300/40 focus:bg-white/[0.06] transition-all duration-200"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs text-slate-500 font-mono mb-2">Message</label>
+                <label className="block text-xs text-slate-300 font-mono mb-2">Message</label>
                 <textarea
                   required
                   rows={5}
                   value={form.message}
                   onChange={e => setForm({ ...form, message: e.target.value })}
                   placeholder="Tell me about your project or opportunity..."
-                  className="w-full bg-white/[0.04] border border-white/[0.07] rounded-xl px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-sky-400/40 focus:bg-white/[0.06] transition-all duration-200 resize-none"
+                  className="w-full bg-white/[0.04] border border-white/[0.07] rounded-xl px-4 py-3 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-sky-300/40 focus:bg-white/[0.06] transition-all duration-200 resize-none"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-semibold text-[#050a18] bg-gradient-to-r from-sky-400 to-violet-400 hover:from-sky-300 hover:to-violet-300 transition-all duration-200 hover:shadow-[0_0_30px_rgba(56,189,248,0.3)]"
+                className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-semibold text-[#2b3157] bg-gradient-to-r from-sky-300 to-violet-300 hover:from-sky-200 hover:to-violet-200 transition-all duration-200 hover:shadow-[0_0_30px_rgba(56,189,248,0.3)]"
               >
                 <Send size={16} />
                 Send Message
@@ -154,6 +148,6 @@ export default function Contact() {
           </motion.div>
         </div>
       </div>
-    </section>
+    </FramedSection>
   );
 }

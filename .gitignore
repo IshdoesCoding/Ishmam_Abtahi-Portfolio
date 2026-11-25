@@ -23,3 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 .env
+
+# Old resumes with personal info (kept locally, never committed)
+_private_old_resumes/

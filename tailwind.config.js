@@ -4,10 +4,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        base: { DEFAULT: '#050a18', surface: '#080d1e', card: '#0d1526' },
+        indigoBase: { DEFAULT: '#47517d', surface: '#424b76', card: '#2b3157' },
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['Cinzel', 'Georgia', 'serif'],
         mono: ['"JetBrains Mono"', '"Fira Code"', 'monospace'],
       },
       backgroundImage: {

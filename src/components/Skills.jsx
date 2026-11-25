@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 import { Code2, Cloud, Shield, Wrench } from 'lucide-react';
+import { FramedSection, SectionHeader } from './Ornate';
+import { useSectionAchievement } from '../game/GameContext';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -67,50 +69,46 @@ const categories = [
 
 const accentMap = {
   sky: {
-    header: 'text-sky-400',
-    icon: 'bg-sky-400/10 text-sky-400',
-    proficient: 'text-sky-400',
-    familiar: 'text-slate-500',
-    border: 'border-sky-400/10 hover:border-sky-400/30',
+    header: 'text-sky-300',
+    icon: 'bg-sky-300/10 text-sky-300',
+    proficient: 'text-sky-300',
+    familiar: 'text-slate-300',
+    border: 'border-sky-300/10 hover:border-sky-300/30',
   },
   violet: {
-    header: 'text-violet-400',
-    icon: 'bg-violet-400/10 text-violet-400',
-    proficient: 'text-violet-400',
-    familiar: 'text-slate-500',
-    border: 'border-violet-400/10 hover:border-violet-400/30',
+    header: 'text-violet-300',
+    icon: 'bg-violet-300/10 text-violet-300',
+    proficient: 'text-violet-300',
+    familiar: 'text-slate-300',
+    border: 'border-violet-300/10 hover:border-violet-300/30',
   },
   rose: {
-    header: 'text-rose-400',
-    icon: 'bg-rose-400/10 text-rose-400',
-    proficient: 'text-rose-400',
-    familiar: 'text-slate-500',
-    border: 'border-rose-400/10 hover:border-rose-400/30',
+    header: 'text-rose-300',
+    icon: 'bg-rose-300/10 text-rose-300',
+    proficient: 'text-rose-300',
+    familiar: 'text-slate-300',
+    border: 'border-rose-300/10 hover:border-rose-300/30',
   },
   emerald: {
-    header: 'text-emerald-400',
-    icon: 'bg-emerald-400/10 text-emerald-400',
-    proficient: 'text-emerald-400',
-    familiar: 'text-slate-500',
-    border: 'border-emerald-400/10 hover:border-emerald-400/30',
+    header: 'text-emerald-300',
+    icon: 'bg-emerald-300/10 text-emerald-300',
+    proficient: 'text-emerald-300',
+    familiar: 'text-slate-300',
+    border: 'border-emerald-300/10 hover:border-emerald-300/30',
   },
 };
 
 export default function Skills() {
+  const sectionRef = useSectionAchievement('skill_tree');
   return (
-    <section id="skills" className="section-padding bg-[#050a18]">
+    <FramedSection id="skills" tone="a" sectionRef={sectionRef}>
       <div className="max-w-6xl mx-auto">
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: '-80px' }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold gradient-text mb-3">Skills</h2>
-          <p className="text-slate-500 text-sm font-mono">// tools of the trade</p>
-        </motion.div>
+        <SectionHeader title="Skills" subtitle="Skill Tree" />
 
+        <p className="text-center text-xs font-mono text-slate-200 -mt-6 mb-10 flex items-center justify-center gap-4">
+          <span className="flex items-center gap-1.5"><span className="flex gap-1">{[0, 1, 2].map(n => <span key={n} className="w-2 h-2 rotate-45 bg-amber-200" />)}</span> Proficient</span>
+          <span className="flex items-center gap-1.5"><span className="flex gap-1">{[0, 1].map(n => <span key={n} className="w-2 h-2 rotate-45 bg-amber-200" />)}<span className="w-2 h-2 rotate-45 border border-amber-200/50" /></span> Familiar</span>
+        </p>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {categories.map((cat, i) => {
             const a = accentMap[cat.accent];
@@ -128,15 +126,20 @@ export default function Skills() {
                   <div className={`p-2 rounded-lg ${a.icon}`}>
                     <cat.icon size={16} />
                   </div>
-                  <h3 className={`font-semibold text-sm ${a.header}`}>{cat.label}</h3>
+                  <h3 className={`font-display font-semibold text-sm ${a.header}`}>{cat.label}</h3>
                 </div>
 
                 <ul className="space-y-3">
                   {cat.skills.map(s => (
                     <li key={s.name} className="flex items-center justify-between gap-2">
                       <span className="text-slate-300 text-sm">{s.name}</span>
-                      <span className={`text-xs font-mono flex-shrink-0 ${s.level === 'Proficient' ? a.proficient : a.familiar}`}>
-                        {s.level}
+                      <span className="flex gap-1 flex-shrink-0" title={s.level} aria-label={s.level}>
+                        {[0, 1, 2].map(n => (
+                          <span
+                            key={n}
+                            className={`w-2 h-2 rotate-45 ${n < (s.level === 'Proficient' ? 3 : 2) ? 'bg-amber-200' : 'border border-amber-200/50'}`}
+                          />
+                        ))}
                       </span>
                     </li>
                   ))}
@@ -146,6 +149,6 @@ export default function Skills() {
           })}
         </div>
       </div>
-    </section>
+    </FramedSection>
   );
 }

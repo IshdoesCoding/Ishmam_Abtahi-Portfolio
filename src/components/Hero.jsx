@@ -1,9 +1,11 @@
-import { useState, useEffect, useRef, useMemo } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import { ArrowDown, Download } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './icons';
 import CV from '../assets/Ishmam_Abtahi_Resume.pdf';
 import profileImg from '../assets/Hero_profile.JPG';
+import { OrnateFrame } from './Ornate';
+import { useGame } from '../game/GameContext';
 
 const roles = ['Computer Engineer', 'Security Researcher', 'Full-Stack Developer', 'Problem Solver'];
 
@@ -48,10 +50,10 @@ const floatingTech = [
 ];
 
 const colorMap = {
-  rose: 'border-rose-400/30 text-rose-400',
-  violet: 'border-violet-400/30 text-violet-400',
-  sky: 'border-sky-400/30 text-sky-400',
-  emerald: 'border-emerald-400/30 text-emerald-400',
+  rose: 'border-rose-300/30 text-rose-300',
+  violet: 'border-violet-300/30 text-violet-300',
+  sky: 'border-sky-300/30 text-sky-300',
+  emerald: 'border-emerald-300/30 text-emerald-300',
 };
 
 const particles = [
@@ -69,6 +71,17 @@ const particles = [
 
 function ProfileCard() {
   const cardRef = useRef(null);
+  const { unlock } = useGame();
+  const pets = useRef({ count: 0, last: 0 });
+
+  // Hidden achievement: click the photo 5 times quickly to pet the goat
+  const onPet = () => {
+    const now = Date.now();
+    const p = pets.current;
+    p.count = now - p.last < 1500 ? p.count + 1 : 1;
+    p.last = now;
+    if (p.count >= 5) { unlock('easter_egg'); p.count = 0; }
+  };
   const [glowPos, setGlowPos] = useState({ x: 50, y: 50 });
 
   const mouseX = useMotionValue(0);
@@ -103,26 +116,26 @@ function ProfileCard() {
       className="relative flex items-center justify-center"
       style={{ perspective: 1000 }}
     >
-      {/* Outer orbital ring — sky */}
+      {/* Outer orbital ring, sky */}
       <motion.div
-        className="absolute w-[320px] h-[320px] rounded-full border border-sky-400/20"
+        className="absolute w-[320px] h-[320px] rounded-full border border-sky-300/20"
         animate={{ rotate: 360 }}
         transition={{ duration: 22, repeat: Infinity, ease: 'linear' }}
       >
-        <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-sky-400 rounded-full shadow-[0_0_12px_4px_rgba(56,189,248,0.5)]" />
+        <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-sky-300 rounded-full shadow-[0_0_12px_4px_rgba(56,189,248,0.5)]" />
       </motion.div>
 
-      {/* Inner orbital ring — violet, counter-rotate */}
+      {/* Inner orbital ring, violet, counter-rotates */}
       <motion.div
-        className="absolute w-[380px] h-[380px] rounded-full border border-violet-400/15"
+        className="absolute w-[380px] h-[380px] rounded-full border border-violet-300/15"
         animate={{ rotate: -360 }}
         transition={{ duration: 32, repeat: Infinity, ease: 'linear' }}
       >
-        <div className="absolute top-1/2 -right-1.5 -translate-y-1/2 w-2.5 h-2.5 bg-violet-400 rounded-full shadow-[0_0_10px_3px_rgba(167,139,250,0.5)]" />
-        <div className="absolute bottom-6 left-10 w-1.5 h-1.5 bg-sky-400/60 rounded-full" />
+        <div className="absolute top-1/2 -right-1.5 -translate-y-1/2 w-2.5 h-2.5 bg-violet-300 rounded-full shadow-[0_0_10px_3px_rgba(167,139,250,0.5)]" />
+        <div className="absolute bottom-6 left-10 w-1.5 h-1.5 bg-sky-300/60 rounded-full" />
       </motion.div>
 
-      {/* Third ring — dashed look */}
+      {/* Third ring, dashed look */}
       <motion.div
         className="absolute w-[440px] h-[440px] rounded-full"
         style={{ border: '1px dashed rgba(56,189,248,0.08)' }}
@@ -134,7 +147,7 @@ function ProfileCard() {
       {floatingTech.map((t) => (
         <motion.div
           key={t.label}
-          className={`absolute glass-card border rounded-xl px-2.5 py-1.5 text-xs font-mono whitespace-nowrap ${colorMap[t.color]}`}
+          className={`absolute z-20 glass-card border rounded-xl px-2.5 py-1.5 text-xs font-mono whitespace-nowrap ${colorMap[t.color]}`}
           style={{ left: `calc(50% + ${t.x}px)`, top: `calc(50% + ${t.y}px)`, translateX: '-50%', translateY: '-50%' }}
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1, y: [0, t.x > 0 ? -8 : 8, 0] }}
@@ -149,11 +162,12 @@ function ProfileCard() {
         ref={cardRef}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
+        onClick={onPet}
         style={{ rotateX, rotateY, transformStyle: 'preserve-3d' }}
         className="relative w-64 h-72 cursor-pointer"
       >
         {/* Ambient glow */}
-        <div className="absolute -inset-6 rounded-full bg-gradient-to-br from-sky-400/15 to-violet-400/15 blur-3xl pointer-events-none" />
+        <div className="absolute -inset-6 rounded-full bg-gradient-to-br from-sky-300/15 to-violet-300/15 blur-3xl pointer-events-none" />
 
         {/* Image card */}
         <div className="relative w-full h-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
@@ -170,28 +184,28 @@ function ProfileCard() {
             }}
           />
           {/* Bottom gradient */}
-          <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#050a18]/60 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#2b3157]/60 to-transparent" />
         </div>
 
-        {/* Available badge — floats in Z */}
+        {/* Capital One badge, floats in Z */}
         <motion.div
-          className="absolute -bottom-4 -right-5 glass-card border border-emerald-400/30 rounded-xl px-3 py-2 flex items-center gap-2"
+          className="absolute -bottom-4 -right-5 glass-card border border-emerald-300/30 rounded-xl px-3 py-2 flex items-center gap-2"
           style={{ transform: 'translateZ(32px)' }}
           animate={{ y: [0, -7, 0] }}
           transition={{ duration: 3.2, repeat: Infinity, ease: 'easeInOut' }}
         >
-          <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
-          <span className="text-xs text-emerald-400 font-mono font-medium">Available</span>
+          <span className="w-2 h-2 bg-emerald-300 rounded-full animate-pulse" />
+          <span className="text-xs text-emerald-300 font-mono font-medium">Capital One &apos;27</span>
         </motion.div>
 
-        {/* UVA badge — floats in Z */}
+        {/* UVA badge, floats in Z */}
         <motion.div
-          className="absolute -top-4 -left-5 glass-card border border-sky-400/30 rounded-xl px-3 py-2"
+          className="absolute -top-4 -left-5 glass-card border border-sky-300/30 rounded-xl px-3 py-2"
           style={{ transform: 'translateZ(24px)' }}
           animate={{ y: [0, 7, 0] }}
           transition={{ duration: 3.8, repeat: Infinity, ease: 'easeInOut', delay: 1.2 }}
         >
-          <span className="text-xs text-sky-400 font-mono font-medium">🎓 UVA &apos;28</span>
+          <span className="text-xs text-sky-300 font-mono font-medium">🎓 UVA &apos;28</span>
         </motion.div>
       </motion.div>
     </motion.div>
@@ -200,26 +214,30 @@ function ProfileCard() {
 
 export default function Hero() {
   const displayed = useTypewriter(roles);
+  const { unlock } = useGame();
 
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center overflow-hidden"
+      className="relative min-h-screen flex items-center overflow-hidden bg-[#47517d]"
       style={{
-        backgroundImage: 'radial-gradient(rgba(255,255,255,0.055) 1px, transparent 1px)',
+        backgroundImage: 'radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px)',
         backgroundSize: '28px 28px',
       }}
     >
+      <OrnateFrame className="hidden md:block" inset="88px 24px 24px 24px" size={130} sides />
+      <OrnateFrame className="md:hidden" inset="74px 10px 10px 10px" size={64} line={2} />
+
       {/* Background orbs */}
       <div className="orb w-[520px] h-[520px] bg-sky-500/10 -top-20 -left-40 animate-float" />
       <div className="orb w-[400px] h-[400px] bg-violet-500/10 bottom-0 -right-24 animate-float-slow" />
-      <div className="orb w-56 h-56 bg-sky-400/8 top-1/3 right-1/3 animate-float" style={{ animationDelay: '3s' }} />
+      <div className="orb w-56 h-56 bg-sky-300/8 top-1/3 right-1/3 animate-float" style={{ animationDelay: '3s' }} />
 
       {/* Floating particles */}
       {particles.map((p, i) => (
         <motion.div
           key={i}
-          className="absolute w-0.5 h-0.5 rounded-full bg-sky-400/35"
+          className="absolute w-0.5 h-0.5 rounded-full bg-amber-200/80"
           style={{ left: `${p.x}%`, top: `${p.y}%` }}
           animate={{ y: [0, -18, 0], opacity: [0.2, 0.7, 0.2] }}
           transition={{ duration: p.d, repeat: Infinity, ease: 'easeInOut', delay: p.delay }}
@@ -230,9 +248,8 @@ export default function Hero() {
         {/* Left: text */}
         <div>
           <motion.div variants={fadeUp} initial="hidden" animate="show" className="mb-5">
-            <span className="inline-flex items-center gap-2 text-sm text-sky-400 font-mono border border-sky-400/20 px-3 py-1.5 rounded-full bg-sky-400/5">
-              <span className="w-1.5 h-1.5 bg-sky-400 rounded-full animate-pulse" />
-              Open to opportunities
+            <span className="inline-block font-display text-xs sm:text-sm tracking-[0.12em] uppercase text-amber-200 border border-amber-200/40 bg-[#2b3157]/60 rounded-full px-4 py-1.5">
+              Incoming Cybersecurity Intern at Capital One
             </span>
           </motion.div>
 
@@ -241,7 +258,7 @@ export default function Hero() {
             initial="hidden"
             animate="show"
             transition={{ delay: 0.1 }}
-            className="text-5xl md:text-6xl lg:text-7xl font-bold mb-5 leading-tight"
+            className="font-display text-5xl md:text-6xl lg:text-7xl font-bold mb-5 leading-tight tracking-wide"
           >
             <span className="gradient-text">Ishmam<br />Abtahi</span>
           </motion.h1>
@@ -254,7 +271,7 @@ export default function Hero() {
             className="text-lg md:text-xl font-mono text-slate-300 mb-5 h-8 flex items-center gap-1"
           >
             <span>{displayed}</span>
-            <span className="w-0.5 h-5 bg-sky-400 animate-blink inline-block" />
+            <span className="w-0.5 h-5 bg-sky-300 animate-blink inline-block" />
           </motion.div>
 
           <motion.p
@@ -262,10 +279,10 @@ export default function Hero() {
             initial="hidden"
             animate="show"
             transition={{ delay: 0.3 }}
-            className="text-slate-400 text-base max-w-lg mb-8 leading-relaxed"
+            className="text-slate-200 text-base max-w-lg mb-8 leading-relaxed"
           >
-            UVA Computer Engineering student building secure, intelligent software at the
-            intersection of cybersecurity and full-stack development.
+            I&apos;m a Computer Engineering student at UVA who builds secure software. Most of my
+            work sits where cybersecurity and full-stack development overlap.
           </motion.p>
 
           <motion.div
@@ -277,13 +294,14 @@ export default function Hero() {
           >
             <a
               href="#projects"
-              className="px-7 py-3 bg-sky-400 text-[#050a18] font-semibold rounded-xl hover:bg-sky-300 transition-all duration-200 hover:shadow-[0_0_30px_rgba(56,189,248,0.4)]"
+              className="px-7 py-3 bg-sky-300 text-[#2b3157] font-semibold rounded-xl hover:bg-sky-200 transition-all duration-200 hover:shadow-[0_0_30px_rgba(56,189,248,0.4)]"
             >
               View My Work
             </a>
             <a
               href={CV}
               download
+              onClick={() => unlock('recruiter_mode')}
               className="flex items-center gap-2 px-7 py-3 glass-card text-slate-300 font-semibold rounded-xl hover:text-white transition-all duration-200"
             >
               <Download size={16} />
@@ -298,13 +316,23 @@ export default function Hero() {
             transition={{ delay: 0.5 }}
             className="flex items-center gap-5"
           >
-            <a href="https://github.com/IshdoesCoding" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-white transition-colors duration-200" aria-label="GitHub">
+            <a href="https://github.com/IshdoesCoding" target="_blank" rel="noreferrer" className="text-slate-200 hover:text-white transition-colors duration-200" aria-label="GitHub">
               <GithubIcon size={22} />
             </a>
-            <a href="https://linkedin.com/in/ishmam-abtahi" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-white transition-colors duration-200" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/ishmam-abtahi-60601a324/" target="_blank" rel="noreferrer" className="text-slate-200 hover:text-white transition-colors duration-200" aria-label="LinkedIn">
               <LinkedinIcon size={22} />
             </a>
           </motion.div>
+
+          <motion.p
+            variants={fadeUp}
+            initial="hidden"
+            animate="show"
+            transition={{ delay: 0.6 }}
+            className="mt-8 text-xs font-mono text-amber-200/90 flex items-center gap-2"
+          >
+            <span aria-hidden="true">🎮</span> Explore the site to earn XP and unlock achievements. You can track your progress in the bottom left.
+          </motion.p>
         </div>
 
         {/* Right: 3D profile card */}
@@ -318,7 +346,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.4 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-slate-500"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-slate-300"
       >
         <motion.div
           animate={{ y: [0, 8, 0] }}
