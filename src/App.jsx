@@ -17,7 +17,7 @@ export default function App() {
   return (
     <MotionConfig reducedMotion="user">
       <GameProvider>
-        <div className="min-h-screen bg-[#47517d]">
+        <div className="min-h-screen bg-black">
           <Sparkles />
           <Navbar />
           <main><Hero /><About /><Projects /><Experience /><Skills /><Contact /><Arcade /></main>

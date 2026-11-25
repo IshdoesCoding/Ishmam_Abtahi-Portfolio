@@ -219,7 +219,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center overflow-hidden bg-[#47517d]"
+      className="relative min-h-screen flex items-center overflow-hidden bg-black"
       style={{
         backgroundImage: 'radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px)',
         backgroundSize: '28px 28px',

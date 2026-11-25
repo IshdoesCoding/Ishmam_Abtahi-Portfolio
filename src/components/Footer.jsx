@@ -11,7 +11,7 @@ export default function Footer() {
   const scrollTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
   return (
-    <footer className="bg-[#47517d] border-t border-white/[0.07] py-10 px-6">
+    <footer className="bg-black border-t border-white/[0.07] py-10 px-6">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex flex-col items-center md:items-start gap-1">
           <p className="text-slate-300 text-xs">

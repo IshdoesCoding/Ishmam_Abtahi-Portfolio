@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 :root {
-  --bg: #47517d; --bg-alt: #424b76; --bg-deep: #2b3157;
+  --bg: #000000; --bg-alt: #07070a; --bg-deep: #2b3157;
   --border: rgba(255,255,255,0.16); --border-hover: rgba(253,230,138,0.55);
   --gold: #fde68a; --text: #f4f5fb;
 }

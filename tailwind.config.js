@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        indigoBase: { DEFAULT: '#47517d', surface: '#424b76', card: '#2b3157' },
+        indigoBase: { DEFAULT: '#000000', surface: '#07070a', card: '#2b3157' },
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],

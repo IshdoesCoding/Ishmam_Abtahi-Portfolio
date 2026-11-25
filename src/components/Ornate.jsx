@@ -85,7 +85,7 @@ export function SectionHeader({ title, subtitle }) {
 
 // Section shell: indigo background + ornate frame around the content
 export function FramedSection({ id, tone = 'a', sides = false, children, sectionRef }) {
-  const bg = tone === 'a' ? 'bg-[#47517d]' : 'bg-[#424b76]';
+  const bg = tone === 'a' ? 'bg-black' : 'bg-[#07070a]';
   return (
     <section id={id} ref={sectionRef} className={`relative ${bg} section-padding`}>
       <OrnateFrame className="hidden md:block" inset={24} size={120} sides={sides} />
