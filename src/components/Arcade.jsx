@@ -333,7 +333,7 @@ export default function Arcade() {
   }, []);
 
   return (
-    <FramedSection id="arcade" tone="a">
+    <FramedSection id="arcade" tone="a" duel={false}>
       <div className="max-w-4xl mx-auto">
         <SectionHeader title="Bonus Level" subtitle="Side Quest" />
         <p className="text-center text-sm text-slate-200 -mt-6 mb-8">

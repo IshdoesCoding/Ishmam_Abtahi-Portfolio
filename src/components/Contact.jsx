@@ -63,7 +63,6 @@ export default function Contact() {
           >
             <div className="glass-card rounded-2xl p-6">
               <div className="flex items-center gap-2 mb-2">
-                <span className="w-2 h-2 bg-emerald-300 rounded-full animate-pulse" />
                 <span className="text-emerald-300 text-sm font-mono">Open to connect</span>
               </div>
               <p className="text-slate-200 text-sm leading-relaxed">

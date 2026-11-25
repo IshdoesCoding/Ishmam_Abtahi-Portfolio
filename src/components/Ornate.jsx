@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import corner from '../assets/ornaments/corner.png';
 import flourish from '../assets/ornaments/flourish.png';
 import side from '../assets/ornaments/side.png';
+import KnightDuel from './KnightDuel';
 
 // corner.png is the bottom-right ornament; the others are mirrors of it
 const corners = [
@@ -84,12 +85,13 @@ export function SectionHeader({ title, subtitle }) {
 }
 
 // Section shell: indigo background + ornate frame around the content
-export function FramedSection({ id, tone = 'a', sides = false, children, sectionRef }) {
+export function FramedSection({ id, tone = 'a', sides = false, duel = true, children, sectionRef }) {
   const bg = tone === 'a' ? 'bg-black' : 'bg-[#07070a]';
   return (
     <section id={id} ref={sectionRef} className={`relative ${bg} section-padding`}>
       <OrnateFrame className="hidden md:block" inset={24} size={120} sides={sides} />
       <OrnateFrame className="md:hidden" inset={10} size={64} line={2} />
+      {duel && <KnightDuel />}
       <div className="relative">{children}</div>
     </section>
   );

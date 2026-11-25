@@ -5,6 +5,7 @@ import { GithubIcon, LinkedinIcon } from './icons';
 import CV from '../assets/Ishmam_Abtahi_Resume.pdf';
 import profileImg from '../assets/Hero_profile.JPG';
 import { OrnateFrame } from './Ornate';
+import KnightDuel from './KnightDuel';
 import { useGame } from '../game/GameContext';
 
 const roles = ['Computer Engineer', 'Security Researcher', 'Full-Stack Developer', 'Problem Solver'];
@@ -194,7 +195,6 @@ function ProfileCard() {
           animate={{ y: [0, -7, 0] }}
           transition={{ duration: 3.2, repeat: Infinity, ease: 'easeInOut' }}
         >
-          <span className="w-2 h-2 bg-emerald-300 rounded-full animate-pulse" />
           <span className="text-xs text-emerald-300 font-mono font-medium">Capital One &apos;27</span>
         </motion.div>
 
@@ -227,6 +227,7 @@ export default function Hero() {
     >
       <OrnateFrame className="hidden md:block" inset="88px 24px 24px 24px" size={130} sides />
       <OrnateFrame className="md:hidden" inset="74px 10px 10px 10px" size={64} line={2} />
+      <KnightDuel />
 
       {/* Background orbs */}
       <div className="orb w-[520px] h-[520px] bg-sky-500/10 -top-20 -left-40 animate-float" />
